@@ -1,8 +1,0 @@
-C:\Training\Core Packages\MyProduct.API.Extensions\bin\Debug\netstandard2.0\MyProduct.API.Extensions.deps.json
-C:\Training\Core Packages\MyProduct.API.Extensions\bin\Debug\netstandard2.0\MyProduct.API.Extensions.dll
-C:\Training\Core Packages\MyProduct.API.Extensions\bin\Debug\netstandard2.0\MyProduct.API.Extensions.pdb
-C:\Training\Core Packages\MyProduct.API.Extensions\obj\Debug\netstandard2.0\MyProduct.API.Extensions.csprojAssemblyReference.cache
-C:\Training\Core Packages\MyProduct.API.Extensions\obj\Debug\netstandard2.0\MyProduct.API.Extensions.AssemblyInfoInputs.cache
-C:\Training\Core Packages\MyProduct.API.Extensions\obj\Debug\netstandard2.0\MyProduct.API.Extensions.AssemblyInfo.cs
-C:\Training\Core Packages\MyProduct.API.Extensions\obj\Debug\netstandard2.0\MyProduct.API.Extensions.dll
-C:\Training\Core Packages\MyProduct.API.Extensions\obj\Debug\netstandard2.0\MyProduct.API.Extensions.pdb
