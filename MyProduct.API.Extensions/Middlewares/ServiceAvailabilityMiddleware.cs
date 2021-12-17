@@ -3,12 +3,19 @@ using System.Threading.Tasks;
 
 namespace MyProduct.API.Extensions.Middlewares
 {
+    /// <summary>
+    /// Middleware for checking the service availability.
+    /// </summary>
     internal sealed class ServiceAvailabilityMiddleware
     {
-        private readonly RequestDelegate _next;
-        public ServiceAvailabilityMiddleware(RequestDelegate next)
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="next"></param>
+        public ServiceAvailabilityMiddleware(RequestDelegate _)
         {
-            _next = next;
+
         }
 
         public async Task InvokeAsync(HttpContext httpContext)

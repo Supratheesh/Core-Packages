@@ -7,6 +7,9 @@ using MyProduct.API.Extensions.Middlewares;
 
 namespace MyProduct.API.Extensions
 {
+    /// <summary>
+    /// Extension methods for Application builder.
+    /// </summary>
     public static class ApplicationBuilderExtensions
     {
         /// <summary>
@@ -45,6 +48,10 @@ namespace MyProduct.API.Extensions
 
         #region Private Methods
 
+        /// <summary>
+        /// Uses the settings from configuration <see cref="IConfiguration"/> to show or hide the exceptions on page.
+        /// </summary>
+        /// <param name="applicationBuilder"></param>
         private static void ShowExceptionOnPage(IApplicationBuilder applicationBuilder)
         {
             var configuration = applicationBuilder.ApplicationServices.GetRequiredService<IConfiguration>();
@@ -57,9 +64,9 @@ namespace MyProduct.API.Extensions
 
 
         /// <summary>
-        /// Uses the path base from <see cref="IConfiguration"/>.
+        /// Uses the path base from configuration <see cref="IConfiguration"/>.
         /// </summary>
-        /// <param name="app">The application.</param>
+        /// <param name="applicationBuilder">The application builder.</param>
         /// <returns></returns>
         private static void UsePathBase(IApplicationBuilder applicationBuilder)
         {
@@ -71,5 +78,7 @@ namespace MyProduct.API.Extensions
             }
             applicationBuilder.UsePathBase(basePath);
         }
+
+        #endregion
     }
 }
