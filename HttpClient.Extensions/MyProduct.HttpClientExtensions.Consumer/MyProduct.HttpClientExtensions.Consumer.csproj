@@ -11,8 +11,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\MyProduct.HttpClientExtensions\MyProduct.HttpClientExtensions.csproj" />
+  <ItemGroup>   
+    <ProjectReference Include="..\MyProduct.HttpClientExtensions\MyProduct.HttpClientExtensions.csproj" />
   </ItemGroup>
 
 
