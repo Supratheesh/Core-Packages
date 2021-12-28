@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,29 @@ namespace MyProduct.HttpClientExtensions
             var stringContent = new StringContent(postData, Encoding.UTF8, mediaType);
             var httpResponse = await httpClient.PostAsync(url, stringContent).ConfigureAwait(false);
             return await httpResponse.Map<TResponse>();
+        }
+
+        /// <summary>
+        /// Adds a named Http Client for the implementation.
+        /// </summary>
+        /// <typeparam name="TClient"></typeparam>
+        /// <typeparam name="TImplementation"></typeparam>
+        /// <param name="services"></param>
+        /// <returns></returns>
+        public static IServiceCollection AddNamedHttpClient<TClient, TImplementation>(this IServiceCollection services)
+           where TClient : class
+           where TImplementation : class, TClient
+        {
+            services.AddHttpClient<TClient, TImplementation>()
+            .ConfigurePrimaryHttpMessageHandler(() =>
+            {
+                return new HttpClientHandler()
+                {
+                    ClientCertificateOptions = ClientCertificateOption.Manual,
+                    ServerCertificateCustomValidationCallback = (httpRequestMessage, cert, cetChain, policyErrors) => { return true; }
+                };
+            });
+            return services;
         }
 
 
